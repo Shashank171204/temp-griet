@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const products=[
+            {id:1,name:"Product 1",price:10.99},
+            {id:2,name:"Product 2",price:9.99},
+            {id:3,name:"Product 3",price:8.99},
+        ];
+        let str="";
+        let cart={};
+        const test={apple:1,orange:2};
+        const addtoCart=(id)=>{
+            cart[id]=1;
+            showCart();
+        };
+        const showCart=()=>{
+            str="";
+            // for(let key in cart){
+            //     str+=`Product ${key} - $${products.find(p=>p.id==key).price}<br>`;
+            // }
+            products.map((value)=>{
+                if(cart[value.id]){
+                    str+=`<div>${value.id}&nbsp;&nbsp;${value.name}&nbsp;&nbsp;${value.price}</div>`;
+                }
+            })
+            divCart.innerHTML=str;
+        };
+        const showProducts=()=>{
+            products.map((a)=>{
+                str+=`<table align="center"><tr><td>${a.id}</td><td>${a.name}</td><td>${a.price}</td>
+                <td><button onclick="addtoCart(${a.id})">Add to Cart</button></td></tr></table>`
+            });
+            divProducts.innerHTML=str;
+        };
+    </script>
+</head>
+<body onload="showProducts()">
+    <h2 align="center">My Store</h2>
+    <hr>
+    <h3 align="center">Products</h3>
+    <div id="divProducts"></div>
+    <h3 align="center">My Cart</h3>
+    <div id="divCart"></div>
+    <hr>
+</body>
+</html>
