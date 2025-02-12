@@ -125,5 +125,13 @@ function showLogin() {
   `;
   root.innerHTML = str;
 }
-
+function toggle(color) {
+    if (color == "dark") {
+      document.body.style.background = "black";
+      document.body.style.color = "white";
+    } else {
+      document.body.style.background = "white";
+      document.body.style.color = "black";
+    }
+  }
 showLogin();
