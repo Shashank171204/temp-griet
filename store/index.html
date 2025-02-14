@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body onload="showProducts()">
-    <h2 align="center">My Store</h2>
+<body onload="showProducts()" align="center">
+    <h4 align="right">Cart:<span id="count"></span></h4>
     <hr>
-    <h3 align="center">Products</h3>
-    <div id="divProducts"></div>
-    <h3 align="center">My Cart</h3>
-    <div id="divCart"></div>
-    <div id="divTotal"></div>
+    <h1>My Store</h1>
     <hr>
-</body>
+    <h3 onclick="displayProduct()">Products <i class="fas fa-caret-down"></i></h3>
+    <hr>
+    <div id="productbox" style="display:none">
+        <div id="divProducts"></div>
+        <hr>
+        <button onclick="hideProduct()">close</button>
+    </div>
+    <hr>
+    <h3 onclick="displayCart()">My Cart <i class="fas fa-caret-down"></i></h3>
+    <hr>
+    <div id="cartbox" style="display:none">
+        <div id="divCart"></div>
+        <hr>
+        <div id="divTotal"></div>
+        <hr>
+        <button onclick="hidecart()">close</button>
+        <hr>
+    </div>
+  </body>
 </html>
